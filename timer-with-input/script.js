@@ -29,15 +29,10 @@ header.innerHTML = eventName;
 
 const countDownTimer = () => {
     let newYearsDate = new Date(defaultDate);
-    localStorage.setItem('myDate', newYearsDate);
-    let retrieveDate = localStorage.getItem('myDate');
-    const currentDate = new Date();
-    localStorage.setItem('current', currentDate);
-    
-    // console.log( typeof retrieveDate.value, retrieveDate.value);
-    // console.log(typeof currentDate, currentDate);
+    let currentDate = new Date();
 
-    const totalSeconds = (retrieveDate - currentDate) / 1000;
+
+    const totalSeconds = (newYearsDate - currentDate) / 1000;
 
     const days = Math.floor(totalSeconds / 3600 / 24);
     const hours = Math.floor(totalSeconds / 3600) % 24;
@@ -48,6 +43,7 @@ const countDownTimer = () => {
     hoursEl.innerHTML = addZero(hours);
     minutesEl.innerHTML = addZero(minutes);
     secondsEl.innerHTML = addZero(seconds);
+    
 }
 
 const addZero = (time) => {
@@ -58,30 +54,46 @@ const addZero = (time) => {
 countDownTimer();
 setInterval(countDownTimer, 1000);
 
+
 form.onsubmit = (e) => {
     
     
 
     
-    let options = {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric'
-    };
+    // let options = {
+    //     day: 'numeric',
+    //     month: 'short',
+    //     year: 'numeric'
+    // };
     let currDate = userDate.value;
-    let convertedDate = new Date(currDate).toLocaleDateString('en-GB', options);
-    console.log(convertedDate);
+    // let convertedDate = new Date(currDate);
+    // console.log(convertedDate);
     let newEventName = eventEl.value;
 
-    // store the date in array
-    let meArray = []
-    meArray.push(convertedDate);
-    meArray.push(eventName);
-    // console.log(meArray);
-    // console.log(eventName);
-    localStorage.setItem("eventArray", meArray);
-    let newArray = localStorage.getItem("eventArray");
-    console.log(newArray);
+  
+    const countDown = () => {
+        let newYearsDate = new Date(currDate);
+        let currentDate = new Date();
+    
+    
+        const totalSeconds = (newYearsDate - currentDate) / 1000;
+    
+        const days = Math.floor(totalSeconds / 3600 / 24);
+        const hours = Math.floor(totalSeconds / 3600) % 24;
+        const minutes = Math.floor(totalSeconds / 60) % 60;
+        const seconds  = Math.floor(totalSeconds) % 60;
+    
+        daysEl.innerHTML = days;
+        hoursEl.innerHTML = addZero(hours);
+        minutesEl.innerHTML = addZero(minutes);
+        secondsEl.innerHTML = addZero(seconds);
+    }
+
+    // calling the function for a countdown
+    
+    countDown();
+    setInterval(countDown, 1000);
+    
 
     e.preventDefault();
 
