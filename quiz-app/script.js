@@ -23,14 +23,14 @@ const quizData = [
         d: 'SQLite',
         correct: 'a'
     },
-    {
-        questoin: 'Who is the current President of Kenya',
-        a: 'Miguna Miguna',
-        b: 'Raila Odinga',
-        c: 'Kalonzo Musyoka',
-        d: 'Uhuru Kenyatta',
-        correct: 'd'
-    },
+    // {
+    //     question: 'Who is the current President of Kenya',
+    //     a: 'Miguna Miguna',
+    //     b: 'Raila Odinga',
+    //     c: 'Kalonzo Musyoka',
+    //     d: 'Uhuru Kenyatta',
+    //     correct: 'd'
+    // },
     {
         question: 'Which of the following is a protein rich meal',
         a: 'cabbage',
@@ -43,7 +43,8 @@ const quizData = [
 
 // getting the question element - the question header
 const questionEl = document.getElementById("question");
-
+// getting the answer element
+const answersEls = document.querySelectorAll(".answer");
 // getting the elements that will hold the answers
 const a_text = document.getElementById('a_text');
 const b_text = document.getElementById('b_text');
@@ -55,14 +56,24 @@ const submitBtn = document.getElementById('submit');
 
 // this is the first index of the quizData array
 let currentQuiz = 0;
+let score = 0;
 
+// function to deselect radio button
+const deselectAnswer = () => {
+    answersEls.forEach((answerEl) => {
+        answerEl.checked = false;
+    });
+}
 
 
 const loadQuiz = () => {
 
+    deselectAnswer();
+
     const currentQuizData = quizData[currentQuiz];
     console.log(currentQuizData);
     questionEl.innerText = currentQuizData.question;
+
     a_text.innerText = currentQuizData.a;
     b_text.innerText = currentQuizData.b;
     c_text.innerText = currentQuizData.c;
@@ -76,24 +87,43 @@ loadQuiz();
 
 const getSelected = () => {
 
-    const answers = document.querySelectorAll(".answer");
-    answers.forEach((answer) => {
-        if (answer.checked) {
-            
+    const answersEls = document.querySelectorAll(".answer");
+    
+    let answer = "";
+
+    answersEls.forEach((answerEl) => {
+        if (answerEl.checked) {
+           answer = answerEl.id;
         }
     });
+
+    return answer;
 }
 
+
 submitBtn.onclick = () =>{
-    currentQuiz ++;
 
-    getSelected();
+    // check to see answer
+    const answer = getSelected();
 
-    // if (currentQuiz < quizData.length) {
-    //     loadQuiz();
-    // }else {
-    //     // TODO: show results
-    //     alert("You have finished! Get Your results");
+    console.log(answer);
+
+    if (answer) {
         
-    // }
+        // let newAnswer = quizData[currentQuiz];
+        if (answer === quizData[currentQuiz].correct) {
+            score++;
+            console.log(score);
+            console.log(quizData[currentQuiz].correct);
+        }
+        // currentQuiz ++;
+
+        if (currentQuiz < quizData.length) {
+            loadQuiz();
+        }else {
+            // TODO: show results
+            alert("You have finished! Get Your results");
+            
+        }
+    }
 }
