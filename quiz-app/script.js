@@ -23,14 +23,14 @@ const quizData = [
         d: 'SQLite',
         correct: 'a'
     },
-    // {
-    //     question: 'Who is the current President of Kenya',
-    //     a: 'Miguna Miguna',
-    //     b: 'Raila Odinga',
-    //     c: 'Kalonzo Musyoka',
-    //     d: 'Uhuru Kenyatta',
-    //     correct: 'd'
-    // },
+    {
+        question: 'Who is the current President of Kenya',
+        a: 'Miguna Miguna',
+        b: 'Raila Odinga',
+        c: 'Kalonzo Musyoka',
+        d: 'Uhuru Kenyatta',
+        correct: 'd'
+    },
     {
         question: 'Which of the following is a protein rich meal',
         a: 'cabbage',
