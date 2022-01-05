@@ -15,7 +15,7 @@ const secondsEl = document.querySelector("#seconds");
 
 // defaults
 let defaultEvent = "New Year";
-let defaultDate = '1 Jan 2022';
+let defaultDate = '1 Jan 2023';
 
 localStorage.setItem("date", defaultDate);
 localStorage.setItem('eventName', defaultEvent);
@@ -52,7 +52,7 @@ const addZero = (time) => {
 
 // calling the function for a countdown
 countDownTimer();
-setInterval(countDownTimer, 1000);
+let myTimer = setInterval(countDownTimer, 1000);
 
 
 form.onsubmit = (e) => {
@@ -88,6 +88,10 @@ form.onsubmit = (e) => {
         minutesEl.innerHTML = addZero(minutes);
         secondsEl.innerHTML = addZero(seconds);
     }
+    
+
+    // trying to end the countdown function
+    setTimeout(() => clearInterval(myTimer));
 
     // calling the function for a countdown
     
@@ -105,9 +109,11 @@ let showForm = false;
 showBtn.onclick = () => {
     if (!showForm) {
         formContainer.classList.add("show");
+        showBtn.innerHTML = "Hide";
         showForm = true;
     }else{
         formContainer.classList.remove("show");
+        showBtn.innerHTML = "Show";
         showForm = false;
     }
 }
