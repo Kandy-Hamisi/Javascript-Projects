@@ -1,0 +1,33 @@
+.seat-container {
+    border: 1px solid bisque;
+    height: 40px;
+    width: 40px;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.arm-rest {
+    width: 80%;
+    height: 8px;
+    display: inline-block;
+    border: 1px solid bisque;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.right {
+    position: absolute;
+    bottom: 0;
+    right: -4px;
+}
+
+.left {
+    position: absolute;
+    bottom: 0;
+    left: -4px;
+}
