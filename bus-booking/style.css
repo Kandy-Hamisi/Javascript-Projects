@@ -12,22 +12,33 @@
 }
 
 .arm-rest {
-    width: 80%;
-    height: 8px;
+    width: 30%;
+    height: 20px;
     display: inline-block;
     border: 1px solid bisque;
     background-color: #fff;
     border-radius: 5px;
 }
 
-.right {
+.backrest{
+    width: 100%;
     position: absolute;
     bottom: 0;
-    right: -4px;
+    border: 1px solid bisque;
+    height: 3px;
+    background-color: bisque;
+    border-radius: 2px;
+}
+
+.right {
+    position: absolute;
+    top: 13px;
+    right: -5px;
 }
 
 .left {
     position: absolute;
-    bottom: 0;
-    left: -4px;
+    top: 13px;
+    left: -5px;
 }
+
