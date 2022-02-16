@@ -4,10 +4,8 @@ const busContainer = document.querySelector(".busWrapper");
 let count = 1;
 let totalSeats = 43;
 
-while (count <= totalSeats) {
+// while (count <= totalSeats) {
     
-    busContainer.innerHTML = "hello";
-    console.log(busContainer);
-    count ++;
-}
+//     // busContainer.innerHTML = "<div>Hello</div>";
+// }
 
