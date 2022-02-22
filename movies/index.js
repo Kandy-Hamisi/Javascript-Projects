@@ -1,4 +1,4 @@
-// const API = "c41fbd5cfd39aa4a516bdefffae72a03";
+// const API = "c41fbd5cfd39aa4a516bdefffae72a03"
 
 async function fetchMovie() {
     
@@ -17,9 +17,29 @@ async function fetchMovie() {
 async function renderMovie() {
     let movies = await fetchMovie();
     let html = "";
+    console.log(typeof(movies));
     console.log(movies);
+    
+    let movieArray = movies.items;
+    let shortMovieList = movieArray.slice(0, 10);
 
-    Object.values(movies).forEach(movie => {
+
+    shortMovieList.forEach(element => {
+        // console.log(element);
+        let card = `<div class="card">
+            <h5>${element.title}</h5>
+            <img class="images" src="${element.image}" />
+        </div>
+        `;
+        html += card;
+    });
+    
+
+    // Object.values(movies).forEach(movie => {
+        
+
+    //     console.log(movieArray);
+
         // let card = `<div class="card">
                         
         //                 <h5>${movie.title}</h5>
@@ -27,8 +47,10 @@ async function renderMovie() {
         // html += card;
         // console.log(movie.image);
         
+
         
-    });
+        
+    // });
 
     let container = document.querySelector('.container');
     container.innerHTML = html;
@@ -37,3 +59,5 @@ async function renderMovie() {
 }
 
 renderMovie();
+
+
