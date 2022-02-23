@@ -1,3 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+/* general puurpose styles */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #36454F;
+}
+
+.wrapper {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 5rem;
+    padding-left: 250px;
+}
+
+@media (max-width: 375px) {
+    .wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+.title-font {
+    font-family: 'Redressed', cursive;
+}
+
+/* header styles */
+
+.movieHeader {
+    position: fixed;
+    z-index: 3;
+    background: #f18d8d;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+@media (max-width: 375px) {
+    .movieHeader {
+        
+    }
+}
+
+.logo-info{
+    padding-left: 1.25rem;
+}
+
+.logo-info .title {
+    font-size: 25px;
+}
+
+@media (min-width: 376px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+.navigation {
+    padding-right: 1.5rem;
+}
+
+.my-nav {
+    display: grid;
+    place-items: center;
+    row-gap: 10px;
+    position: relative;
+}
+
+.avatar-img {
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+}
+
+/* end of header styles */
+
+
+/* sidebar styles */
+
+.sidebar-section {
+    position: fixed;
+    left: 0;
+    top: 3rem;
+    bottom: 0;
+    background: #353935;
+    width: 200px;
+    color: gray;
+}
+
+@media (max-width: 375px) {
+    .sidebar-section {
+        display: none;
+    }
+}
+
+.sidebar-nav {
+    padding: relative;
+    padding-left: 1.25rem;
+
+}
+
+
+.menav {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.menav li {
+    padding-bottom: 1em;
+}
+
+/* end of sidebar styles */
+
 img{
     display: block;
     max-width: 100%;
@@ -10,7 +141,31 @@ img{
     gap: 1.5em;
 }
 
+@media (max-width: 375px) {
+    .container {
+        display: flex;
+        flex-flow: row wrap;
+    }
+}
+
 .images {
     height: 200px;
     width: auto;
+}
+
+/* movie styles */
+
+.card {
+    display: grid;
+    place-items: center;
+}
+
+.card img {
+    padding-bottom: 10px;
+}
+
+.card h5{
+    text-align: center;
+    color: #fff;
+    max-width: 10em;
 }

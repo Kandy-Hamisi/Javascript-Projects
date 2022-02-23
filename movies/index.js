@@ -26,31 +26,15 @@ async function renderMovie() {
 
     shortMovieList.forEach(element => {
         // console.log(element);
-        let card = `<div class="card">
-            <h5>${element.title}</h5>
+        let card = 
+        `<div class="card">
             <img class="images" src="${element.image}" />
+            <h5 class="title title-font">${element.title}</h5>
         </div>
         `;
         html += card;
     });
     
-
-    // Object.values(movies).forEach(movie => {
-        
-
-    //     console.log(movieArray);
-
-        // let card = `<div class="card">
-                        
-        //                 <h5>${movie.title}</h5>
-        //             </div>`;
-        // html += card;
-        // console.log(movie.image);
-        
-
-        
-        
-    // });
 
     let container = document.querySelector('.container');
     container.innerHTML = html;
