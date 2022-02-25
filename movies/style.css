@@ -196,6 +196,19 @@ img{
     width: auto;
 }
 
+.intro-section {
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    bottom: 0;
+    top: 50%;
+}
+
 /* movie styles */
 
 .card {
