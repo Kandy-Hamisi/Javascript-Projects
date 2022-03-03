@@ -200,14 +200,33 @@ img{
     width: 50vw;
     display: flex;
     justify-content: space-between;
+}
+
+.form-section input {
+    padding: 0.4em;
+    outline: none;
+    border: none;
+    
+}
+
+.search-bar {
     position: relative;
+    
 }
 
 .search-icon {
     position: absolute;
-    bottom: 0;
-    top: 50%;
+    right: 0;
 }
+
+.search-icon img {
+    height: 25px;
+    transform: rotate(-90deg);
+    margin: 2px;
+    cursor: pointer;
+}
+
+
 
 /* movie styles */
 
