@@ -3,10 +3,15 @@ let searchUrl = "https://imdb-api.com/en/API/SearchMovie/k_sopto3ua/";
 
 // getting elements from the page
 let hamburgerBtn = document.querySelector(".hamburger-menu .hamburger-btn");
+let container = document.querySelector('.container');
 let sidebar = document.querySelector(".sidebar-section");
 const form = document.querySelector(".form-section"),
 searchBar = form.querySelector(".search-bar"),
 searchBtn = form.querySelector(".search-icon img");
+
+
+
+
 
 
 // on clicking the search icon
@@ -52,11 +57,14 @@ searchBar.onchange = () => {
                 </div>
                 `;
                 html += card;
+                
             });
             
 
-            let container = document.querySelector('.container');
+            
             container.innerHTML = html;
+            
+
 
         }
 
@@ -107,25 +115,40 @@ async function renderMovie() {
     let movieArray = movies.items;
     let shortMovieList = movieArray.slice(0, 10);
 
-
-    shortMovieList.forEach(element => {
-        // console.log(element);
-        let card = 
-        `<div class="card">
-            <img class="images" src="${element.image}" />
-            <h5 class="title title-font">${element.title}</h5>
-        </div>
+    container.innerHTML = shortMovieList.map(el => {
+        
+        return `
+            <div class='card'>
+                <img class='images' src='${el.image}'>
+                <h5 class='title title-font'>${el.title}</h5>
+            </div>
         `;
-        html += card;
+        // html += card;
+        
     });
     
-
-    let container = document.querySelector('.container');
-    container.innerHTML = html;
+    const carding = document.querySelectorAll(".container .card");
     
+    
+
+    
+    // return myTry;
+
+
+    // shortMovieList.forEach(element => {
+    //     // console.log(element);
+    //     let card = 
+    //     `<div class="card">
+    //         <img class="images" src="${element.image}" />
+    //         <h5 class="title title-font">${element.title}</h5>
+    //     </div>
+    //     `;
+    //     html += card;
+    // });
+    
+
+    // let container = document.querySelector('.container');
 
 }
 
 renderMovie();
-
-
