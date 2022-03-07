@@ -9,6 +9,8 @@ const form = document.querySelector(".form-section"),
 searchBar = form.querySelector(".search-bar"),
 searchBtn = form.querySelector(".search-icon img");
 
+let favorites = [];
+
 
 
 
@@ -118,8 +120,8 @@ async function renderMovie() {
     container.innerHTML = shortMovieList.map(el => {
         
         return `
-            <div class='card'>
-                <img class='images' src='${el.image}'>
+            <div class='card' id="${el.id}">
+                <img class='images' src='${el.image}' >
                 <h5 class='title title-font'>${el.title}</h5>
             </div>
         `;
@@ -128,6 +130,24 @@ async function renderMovie() {
     });
     
     const carding = document.querySelectorAll(".container .card");
+    carding.forEach(item => {
+        item.onclick = () => {
+            shortMovieList.map(myItem => {
+                if (myItem.id === item.id) {
+                    // storing the specific movie object so that we can later add it into an array
+                    let movieObject = myItem;
+
+                    // adding the movie to favorites
+                    let newArray =  favorites.push(movieObject);
+                    localStorage.setItem("favoriteMovies", JSON.stringify(newArray));
+                    console.log(JSON.parse(localStorage.getItem("favoriteMovies")));
+                    
+                }
+            })
+            
+        }
+    })
+
     
     
 
