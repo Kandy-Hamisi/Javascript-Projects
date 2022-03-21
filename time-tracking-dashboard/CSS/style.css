@@ -1,0 +1,147 @@
+/* general styles */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+:root {
+    /* primary font colors */
+    --lght-red-wrk: hsl(15, 100%, 70%);
+    --sft-blue-play: hsl(195, 74%, 62%);
+    --lgt-red-stdy: hsl(348, 100%, 68%);
+    --lgt-green-ex: hsl(145, 58%, 55%);
+    --violet-social: hsl(264, 64%, 52%);
+    --self-care-orng: hsl(43, 84%, 65%);
+
+    /* neutral */
+    --vry-drk-blue: hsl(226, 43%, 10%);
+    --drk-blue: hsl(235, 46%, 20%);
+    --des-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: var(--vry-drk-blue);
+}
+
+/* end of general styles */
+
+
+.wrapper {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-splitter {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 40px;
+}
+
+.progress-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.card-progress {
+    /* background-color: blue; */
+    background: var(--drk-blue);
+    border-radius: 5px;
+    width: 150px;
+    position: relative;
+    border-radius: 5px !important;
+    /* z-index: -3; */
+}
+
+/* .card-progress.Work {
+    background-color: var(--lght-red-wrk);
+} */
+
+.card-progress.Play {
+    background-color: var(--sft-blue-play);
+}
+
+.card-progress.Study {
+    background-color: var(--lgt-red-stdy);
+}
+
+.card-progress.Exercise {
+    background-color: var(--lgt-green-ex);
+}
+
+.card-progress.Social {
+    background-color: var(--violet-social);
+}
+
+.card-progress.SelfCare {
+    background-color: var(--self-care-orng);
+}
+
+
+/* .menu-splitter::before {
+    content: "";
+    background: url("images/icon-exercise.svg");
+    background-position: right;
+} */
+
+.content {
+    background: var(--drk-blue);
+    border-radius: 5px;
+    
+    padding: 5px 10px;
+    z-index: 3;
+}
+
+.menu-splitter {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.task-title {
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.currenthrs {
+    font-size: 34px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.prev {
+    color: var(--des-blue);
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.img-bg {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -2px;
+    
+}
+
+.Work .img-bg {
+    background-color: var(--lght-red-wrk);
+    border-radius: 5px 5px 0px 0px;
+}
+
+.img-icons {
+    z-index: 2;
+    height: 40px;
+    transform: scale(1.5);
+}
+
+
+.weekly, .monthly {
+    display: none;
+}
