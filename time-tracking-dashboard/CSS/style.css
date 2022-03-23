@@ -21,6 +21,7 @@
     padding: 0;
     /* border: 1px solid red; */
     font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -37,11 +38,118 @@ body {
     transform: translateX(-50%);
 }
 
+@media (max-width: 375px) {
+    .wrapper {
+        position: relative;
+        padding: 20px 10px;
+    }
+}
+
 .section-splitter {
     display: flex;
     justify-content: space-between;
     column-gap: 40px;
 }
+
+@media (max-width: 375px) {
+    .section-splitter {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+}
+
+/* profile card section styles */
+
+.profile-container {
+    background-color: var(--drk-blue);
+    border-radius: 0px 0px 5px 5px;
+}
+
+.profile-card {
+    background-color: var(--des-blue);
+    padding: 20px;
+    border-radius: 5px;
+    width: 170px;
+    /* height: 250px; */
+}
+
+@media (max-width: 375px) {
+    .profile-card {
+        display: flex;
+        width: auto;
+        align-items: center;
+        
+    }
+
+    .profile-text {
+        margin-left: 1em;
+    }
+}
+
+.img-avatar img {
+    height: 50px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    outline: none;
+    margin-bottom: 1em;
+}
+
+
+
+.report {
+    margin-bottom: 10px;
+}
+
+.report h6 {
+    color: var(--pale-blue);
+}
+
+.user-name {
+    margin-bottom: 2em;
+}
+
+.user-name h1 {
+    font-weight: 300;
+    color: #fff;
+}
+
+@media (max-width: 375px) {
+    .user-name h1 {
+        font-size: 1em;
+    }
+
+    .user-name, .report, .img-avatar img, .timeframes h6 {
+        margin: 0 !important;
+    }
+}
+
+.timeframes {
+    padding: 20px;
+    /* background-color: var(--drk-blue); */
+}
+
+@media (max-width: 375px) {
+    .timeframes {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.timeframes h6 {
+    font-weight: 300;
+    font-size: 12px;
+    color: var(--des-blue);
+    margin-bottom: 10px;
+}
+
+.timeframes h6:hover {
+    color: #fff;
+    transition: 0.6s ease;
+    cursor: pointer;
+}
+
+/* progress section styles */
 
 .progress-section {
     display: grid;
@@ -49,54 +157,94 @@ body {
     gap: 40px;
 }
 
+@media (max-width: 375px) {
+    .progress-section {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .card-progress {
     /* background-color: blue; */
-    background: var(--drk-blue);
+    /* background: var(--drk-blue); */
     border-radius: 5px;
     width: 150px;
-    position: relative;
+    /* position: relative; */
     border-radius: 5px !important;
     /* z-index: -3; */
+    overflow: hidden;
 }
+
+@media (max-width: 375px) {
+    .card-progress {
+        width: auto;
+    }
+}
+
 
 /* .card-progress.Work {
     background-color: var(--lght-red-wrk);
 } */
 
-.card-progress.Play {
+.Play .img-bg {
     background-color: var(--sft-blue-play);
 }
 
-.card-progress.Study {
+.Study .img-bg {
     background-color: var(--lgt-red-stdy);
 }
 
-.card-progress.Exercise {
+.Exercise .img-bg {
     background-color: var(--lgt-green-ex);
 }
 
-.card-progress.Social {
+.Social .img-bg {
     background-color: var(--violet-social);
 }
 
-.card-progress.SelfCare {
+.SelfCare .img-bg {
     background-color: var(--self-care-orng);
 }
-
-
-/* .menu-splitter::before {
-    content: "";
-    background: url("images/icon-exercise.svg");
-    background-position: right;
-} */
 
 .content {
     background: var(--drk-blue);
     border-radius: 5px;
-    
+    position: relative;
     padding: 5px 10px;
-    z-index: 3;
+    /* z-index: 3; */
 }
+
+.vert-kebab-menu {
+    cursor: pointer;
+}
+
+.vert-kebab-menu img:hover {
+    /* color: #fff; */
+    fill: #fff;
+    transition: 0.6s ease;
+}
+
+.img-bg {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -2px;
+    /* z-index: 3; */
+    
+}
+
+.Work .img-bg {
+    background-color: var(--lght-red-wrk);
+    /* border-radius: 5px 5px 0px 0px; */
+    /* z-index: -4; */
+}
+
+.img-icons {
+    /* z-index: 1; */
+    height: 35px;
+    transform: scale(1.2);
+    margin-right: 5px;
+}
+
 
 .menu-splitter {
     display: flex;
@@ -123,25 +271,15 @@ body {
     margin-bottom: 10px;
 }
 
-.img-bg {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: -2px;
-    
+@media (max-width: 375px) {
+    .timeframe {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
-
-.Work .img-bg {
-    background-color: var(--lght-red-wrk);
-    border-radius: 5px 5px 0px 0px;
-}
-
-.img-icons {
-    z-index: 2;
-    height: 40px;
-    transform: scale(1.5);
-}
-
 
 .weekly, .monthly {
     display: none;
 }
+

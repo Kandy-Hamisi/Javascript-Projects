@@ -1,21 +1,21 @@
-// fetch("./data.json")
-//     .then(response => {
-//         console.log(response.json());
-//     })
-//     .then(data => {
-//         console.log(appendData(data));
-//     })
-//     .catch(error => console.log(error));
+
 
 const cardTxt = document.querySelectorAll(".timeframe");
 const progSect = document.querySelector(".progress-section");
 const myCard = document.querySelector(".card-progress");
 
-// myCard.forEach = (carding => {
-//     console.log(carding);
-// })
+// const weekly = document.querySelector(".weekly");
+// console.log(weekly);
 
 console.log(progSect);
+
+// profile card variables
+const weeklySelector = document.querySelector(".weeklyTimeFrame");
+
+
+weeklySelector.onclick = () => {
+    
+}
 
 // fetch the json data
 
@@ -29,7 +29,6 @@ async function fetchData() {
     }
 }
 
-// fetchData();
 
 
 // rendering the cards for timeframes
@@ -85,3 +84,8 @@ async function renderCards() {
 }
 
 renderCards();
+
+
+// 
+const weekly = document.querySelector(".weekly");
+console.log(weekly);
