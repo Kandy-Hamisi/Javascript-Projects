@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>General Fib | E-commerce product page</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <!-- header-section -->
+    <header class="header-section">
+
+      <!-- logo and nav container -->
+      <div class="logo-nav-container">
+        <div class="header-logo">
+          <img src="images/logo.svg" alt="">
+        </div>
+        <!-- navigation bar -->
+        <nav class="main-nav">
+          <ul class="menu-nav">
+            <li class="menu-nav__item"><a href="#" class="menu-nav__link">Collections</a></li>
+            <li class="menu-nav__item"><a href="#" class="menu-nav__link">Men</a></li>
+            <li class="menu-nav__item"><a href="#" class="menu-nav__link">Women</a></li>
+            <li class="menu-nav__item"><a href="#" class="menu-nav__link">About</a></li>
+            <li class="menu-nav__item"><a href="#" class="menu-nav__link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- cart and profile container -->
+      <div class="detailed-container">
+        <img src="images/icon-cart.svg" class="cart-img" alt="">
+        <img src="images/image-avatar.png" class="avatar-img" alt="">
+      </div>
+
+    </header>
+    <div class="divider">
+      <hr>
+    </div>
+
+    <div class="product-section">
+      <div class="product-images">
+        <div class="main-img">
+          <img src="images/image-product-1.jpg" alt="">
+        </div>
+        <div class="image-thumbnails">
+          <div class="image-thumb-1">
+            <img src="images/image-product-1-thumbnail.jpg" alt="">
+          </div>
+          <div class="image-thumb-2">
+            <img src="images/image-product-2-thumbnail.jpg" alt="">
+          </div>
+          <div class="image-thumb-3">
+            <img src="images/image-product-3-thumbnail.jpg" alt="">
+          </div>
+          <div class="image-thumb-4">
+            <img src="images/image-product-4-thumbnail.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- product desc -->
+      <div class="product-details">
+        <div class="company-title">
+          <h5>sneaker company</h5>
+        </div>
+        <div class="product-name">
+          <h1>Fall Limited Edition Sneakers</h1>
+        </div>
+        <div class="prod-desc">
+          <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+        </div>
+        <div class="pricing-tags">
+          <div class="curr-price-badge">
+            <h2>$125.00</h2>
+            <span class="badge">50%</span>
+          </div>
+          <div class="prev-price">
+            <span>$125</span>
+          </div>
+        </div>
+        <div class="incr-btn-container">
+          <div class="incr-decr">
+            <input type="button" onclick="decrementValue()" name="" value="-" id="">
+            <input type="text" class="quantity" id="quantity" size="1" value="0">
+            <input type="button" onclick="incrementValue()" name="" id="" value="+">
+          </div>
+          <div class="add-to-cart">
+            <button class="add-cart-btn">
+              <use href="images/icon-cart.svg" ></use>
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal-cart-container">
+    <div class="cart-header">
+      <h3>Cart</h3>
+    </div>
+    <hr>
+    <div class="cart-body">
+      <div class="content">
+        <div class="prod-img">
+          <img src="images/image-product-1-thumbnail.jpg" alt="">
+        </div>
+        <div class="info">
+          <div class="prod-name">
+            <h5>Fall Limited Edition Sneakers</h5>
+          </div>
+          <div class="calculations">
+            <h5 class="multiplication">$125 x 3</h5>
+            <h5 class="total">$375</h5>
+          </div>
+        </div>
+        <div class="icon-delete">
+          <img src="images/icon-delete.svg" alt="">
+        </div>
+      </div>
+      <div class="checkout-btn">
+        <a href="#" class="checkout-btn">Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
