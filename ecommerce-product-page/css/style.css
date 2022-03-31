@@ -226,6 +226,7 @@ img {
     border-radius: 3px;
     background: var(--orange);
     color: #fff;
+    cursor: pointer;
 }
 
 .add-cart-btn img {
@@ -264,10 +265,15 @@ img {
     margin: 20px;
 }
 
+.content-empty {
+    padding: 30px;
+}
+
 .content {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    display: none;
 }
 
 .content .prod-img img {
@@ -293,7 +299,6 @@ img {
 }
 
 .checkout-btn {
-
     display: flex;
     justify-content: center;
     width: 100%;
@@ -304,6 +309,5 @@ img {
     background-color: var(--orange);
     border-radius: 3px;
     padding: 10px;
-    
-    
+    display: none;
 }
