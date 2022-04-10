@@ -96,6 +96,20 @@ img {
     margin-right: 3em;
     height: 15px;
     cursor: pointer;
+    position: relative;
+}
+
+.count-badge {
+    position: absolute;
+    font-size: 10px;
+    margin-left: 5px;
+    margin-top: -15px;
+    background: var(--orange);
+    color: #fff;
+    width: 20px;
+    border-radius: 4px;
+    text-align: center;
+    display: none;
 }
 
 .avatar-img {
@@ -131,6 +145,7 @@ img {
 .image-thumbnails img {
     height: 70px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .product-details {
@@ -231,7 +246,7 @@ img {
 
 .add-cart-btn img {
     margin-right: 10px;
-    fill: #fff;
+    color: #fff;
 }
 
 /* modal cart-container */
@@ -292,10 +307,15 @@ img {
 
 .calculations {
     display: flex;
+    align-items: center;
 }
 
 .calculations .multiplication {
     margin-right: 4px;   
+}
+
+.icon-delete img {
+    cursor: pointer;
 }
 
 .checkout-btn {
@@ -310,4 +330,23 @@ img {
     border-radius: 3px;
     padding: 10px;
     display: none;
+}
+
+
+/* lightbox section */
+
+.lightbox-section {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.lightbox-section.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
